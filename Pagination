@@ -1,0 +1,81 @@
+// api for pagination 
+router.get('/userData', (req, res) => {
+    try {
+        // Pagination parameters
+        const page = req.query.page || 1; // Default to page 1 if not provided
+        const limit = 10; // Number of records per page
+        const offset = (page - 1) * limit; // Calculate offset based on current page
+
+        const sql = `SELECT * FROM userRegistration LIMIT ${limit} OFFSET ${offset}`;
+
+        db.query(sql, (err, result) => {
+            if (err) {
+                console.log(`Error fetching data: ${err}`);
+                res.status(500).send("An error occurred");
+            } else {
+                res.json(result);
+            }
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("An error occurred");
+    }
+});
+
+// AJAX PART FOR IT 
+<div id="userData"></div> <!-- Div to display user data -->
+<nav id="pagination"></nav> <!-- Pagination links -->
+
+<script>
+    // Function to fetch user data for a given page
+    function fetchUserData(page) {
+        $.ajax({
+            url: `/userData?page=${page}`,
+            type: 'GET',
+            success: function(data) {
+                // Display user data
+                $('#userData').empty(); // Clear previous data
+                data.forEach(user => {
+                    $('#userData').append(`<div>${user.name}</div>`); // Modify this according to your data structure
+                });
+            },
+            error: function(xhr, status, error) {
+                console.error("Error fetching user data:", error);
+            }
+        });
+    }
+
+    // Function to generate pagination links
+    function generatePaginationLinks(totalPages) {
+        $('#pagination').empty(); // Clear previous pagination links
+        $('#pagination').append('<ul class="pagination"></ul>'); // Add pagination ul element
+
+        // Add "Previous" link
+        $('.pagination').append(`<li class="page-item"><a class="page-link" href="#" onclick="fetchUserData(${currentPage - 1})">Previous</a></li>`);
+
+        // Add page number links
+        for (let i = 1; i <= totalPages; i++) {
+            $('.pagination').append(`<li class="page-item"><a class="page-link" href="#" onclick="fetchUserData(${i})">${i}</a></li>`);
+        }
+
+        // Add "Next" link
+        $('.pagination').append(`<li class="page-item"><a class="page-link" href="#" onclick="fetchUserData(${currentPage + 1})">Next</a></li>`);
+    }
+
+    // Fetch initial user data
+    let currentPage = 1;
+    fetchUserData(currentPage);
+
+    // Fetch total number of pages
+    $.ajax({
+        url: '/userData',
+        type: 'HEAD',
+        success: function(data, status, xhr) {
+            const totalPages = Math.ceil(xhr.getResponseHeader('X-Total-Count') / 10); // Assuming your API returns total count in the header
+            generatePaginationLinks(totalPages);
+        },
+        error: function(xhr, status, error) {
+            console.error("Error fetching total number of pages:", error);
+        }
+    });
+</script>
