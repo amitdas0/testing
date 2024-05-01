@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with Skills</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        .skill-row {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dynamic Table with Skills</h2>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Sno.</th>
+                <th>Name</th>
+                <th>Action</th>
+                <th>Skill</th> <!-- Added skill column heading -->
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Initial row -->
+            <tr class="data-row" style="display:none;">
+                <td class="serial-number"></td>
+                <td><input type="text" name="name"></td>
+                <td><button onclick="addSkillRow(this)">+</button></td>
+                <td class="skill-column" colspan="2"></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <button onclick="addRow()">Add Row</button>
+    
+    <script>
+        function addRow() {
+            var tableBody = document.getElementById('table-body');
+            var rowCount = tableBody.children.length + 1;
+
+            // Show the initial row
+            var initialRow = document.querySelector('.data-row');
+            var newRow = initialRow.cloneNode(true); // Create a copy of the initial row
+            newRow.style.display = 'table-row';
+            newRow.querySelector('.serial-number').textContent = rowCount;
+            tableBody.appendChild(newRow);
+        }
+
+        function addSkillRow(btn) {
+            var currentRow = btn.parentNode.parentNode;
+            var skillColumn = currentRow.querySelector('.skill-column');
+
+            // Create skill input
+            var skillInput = document.createElement('input');
+            skillInput.type = "text";
+            skillInput.name = "skill";
+
+            // Add skill input to skill column
+            skillColumn.appendChild(skillInput);
+
+            // Show the skill row
+            var skillRow = currentRow.nextElementSibling;
+            skillRow.style.display = 'table-row';
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with Skills</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        .skill-row {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dynamic Table with Skills</h2>
+    <form action="/display" method="POST">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Sno.</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                    <th>Skill</th> <!-- Added skill column heading -->
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Initial row -->
+                <tr class="data-row" style="display:none;">
+                    <td class="serial-number"></td>
+                    <td><input type="text" name="name"></td>
+                    <td><button type="button" onclick="addSkillRow(this)">+</button></td>
+                    <td class="skill-column" rowspan="2"></td> <!-- rowspan for the skill column -->
+                </tr>
+                <tr class="skill-row" style="display:none;">
+                    <td></td>
+                    <td><input type="text" name="skill"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <button type="button" onclick="addRow()">Add Row</button>
+        <button type="submit">Go</button> <!-- Submit button -->
+    </form>
+    
+    <script>
+        function addRow() {
+            var tableBody = document.getElementById('table-body');
+            var rowCount = tableBody.children.length / 2 + 1;
+
+            // Show the initial row
+            var initialRow = document.querySelector('.data-row');
+            var newRow = initialRow.cloneNode(true); // Create a copy of the initial row
+            newRow.style.display = 'table-row';
+            newRow.querySelector('.serial-number').textContent = rowCount;
+            tableBody.appendChild(newRow);
+
+            // Show the skill row
+            var skillRow = document.querySelector('.skill-row').cloneNode(true);
+            skillRow.style.display = 'table-row';
+            tableBody.appendChild(skillRow);
+        }
+
+        function addSkillRow(btn) {
+            var currentRow = btn.parentNode.parentNode;
+            var skillColumn = currentRow.querySelector('.skill-column');
+
+            // Create skill input
+            var skillInput = document.createElement('input');
+            skillInput.type = "text";
+            skillInput.name = "skill";
+
+            // Add skill input to skill column
+            skillColumn.appendChild(skillInput);
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Displayed Data</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Displayed Data</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sno.</th>
+                <th>Name</th>
+                <th>Skill</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (var i = 0; i < data.length; i++) { %>
+                <tr>
+                    <td><%= i + 1 %></td>
+                    <td><%= data[i].name %></td>
+                    <td><%= data[i].skill %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
