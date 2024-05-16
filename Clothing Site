@@ -110,4 +110,50 @@
   .custom-dropdown:hover > .nav-link.dropdown-toggle::after {
     transform: rotate(180deg); /* Optional: rotate the dropdown arrow if desired */
   }
-  
+
+
+// popular product row
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col-md-3  ms-5 popularproductr1">
+            <img src="./asserts/images/download.jpg" height="200px" width="100%">
+            <h5 style="font-weight: 700; font-family: monospace;">Unisex Shoes</h5>
+            <h6 style="color: gray;">$20.00</h6>
+            <p><i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star-half" style="color: #ffd700;"></i>
+            </p>
+        </div>
+
+        <div class="col-md-3  ms-5 popularproductr1">
+            <img src="./asserts/images/download (1).jpg" alt="" height="200px" width="100%">
+            <h5 style="font-weight: 700; font-family: monospace;">High Heels</h5>
+            <h6 style="color: gray;"><s>$20.00</s> $19.99</h6>
+            <p><i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+            </p>
+
+        </div>
+
+        <div class="col-md-3  ms-5 popularproductr1">
+            <img src="./asserts/images/download (2).jpg" alt="" height="200px" width="100%">
+            <h5 style="font-weight: 700; font-family: monospace;">Denim Jacket</h5>
+            <h6 style="color: gray;"><s>$40.00</s> $19.99</h6>
+            <p><i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+                <i class="fa-regular fa-star" style="color: #ffd700;"></i>
+            </p>
+        </div>
+    </div>
+</div>
+
+// popular product css
+.popularproductr1{
+    background-color: aliceblue;
+    border: 1px solid black;
+  }
