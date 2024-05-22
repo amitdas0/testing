@@ -157,3 +157,196 @@
     background-color: aliceblue;
     border: 1px solid black;
   }
+
+// UPDATE THIS **
+<div class="container-fluid header">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid ">
+          <a class="navbar-brand" href="#"> <img src="../asserts/images/logo-removebg-preview.png" width="80px" height="70px" > </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown custom-dropdown mega-menu">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Clothing
+                </a>
+                <div class="dropdown-menu mega-menu-content rounded-0">
+                    <div class="container-fluid ">
+                        <div class="row megamenurow">
+                            <div class="col-md-2 col-4 ">
+                                <h5 style="font-family: serif; font-weight: 700;">Tops</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Crop Tops</a></li>
+                                    <li><a href="#">Tank Tops</a></li>
+                                    <li><a href="#">T-shirts</a></li>
+                                    <li><a href="#">Peplum Tops</a></li>
+                                    <li><a href="#">Wrap Tops</a></li>
+                                    <li><a href="#">Off Shoulder Tops</a></li>
+                                    <li><a href="#">Cold Shoulder Tops</a></li>
+                                    <li><a href="#">One Shoulder Tops</a></li>
+                                    <li><a href="#">Maxi Tops</a></li>
+
+
+
+
+                                </ul>
+                            </div>
+
+                            <div class="col-md-2 col-2 ">
+                                <h5 style="font-family: serif; font-weight: 700;">Dresses</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Bodycon Dresses</a></li>
+                                    <li><a href="#">Maxi Dresses</a></li>
+                                    <li><a href="#">Midi Skirts</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-2 col-3 ">
+                                <h5 style="font-family: serif; font-weight: 700;">Shop by trend</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Hues for bright now</a></li>
+                                    <li><a href="#">#Comfycore</a></li>
+                                    <li><a href="#">Everyday elevated</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-2 col-2">
+                                <ul class="list-unstyled">
+                                    <!-- <label class="bg-success">stock</label> -->
+                                    <li><a href="#"><img src="./asserts/images/images.jpg" class="img-fluid">
+                                    </a></li>
+                                </ul>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+              <li class="nav-item dropdown custom-dropdown mega-menu">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categories
+                </a>
+                <div class="dropdown-menu mega-menu-content rounded-0">
+                    <div class="container-fluid">
+                        <div class="row megamenurow">
+                            <div class="col-md-2 col-2">
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Tops</a></li>
+                                    <li><a href="#">Dresses</a></li>
+                                    <li><a href="#">Co-ords</a></li>
+                                    <li><a href="#">Skirts</a></li>
+                                    <li><a href="#">Bottoms</a></li>
+                                    <li><a href="#">Basics</a></li>
+                                    <li><a href="#">Classics</a></li>
+                                    <li><a href="#">Bottoms</a></li>
+                                    <li><a href="#">Workwear</a></li>
+                                    <li><a href="#">Loungewear</a></li>
+                                    <li><a href="#">Bottoms</a></li>
+
+
+
+
+
+                                    
+
+
+                                </ul>
+                            </div>
+                            <div class="col-md-3 col-3">
+                                <h5>Shop by occasion</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Party</a></li>
+                                    <li><a href="#">Vacation</a></li>
+                                    <li><a href="#">Work</a></li>
+                                    <li><a href="#">Loungewear</a></li><br>
+                                <h5>Curve</h5>
+                                <li><a href="#">Tops</a></li>
+                                <li><a href="#">Dresses</a></li>
+
+
+                                </ul>
+                            </div>
+                            <div class="col-md-2 col-2">
+                                <h5>Shop by trends</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Hues for bright now</a></li>
+                                    <li><a href="#">#Comfycore</a></li>
+                                    <li><a href="#">Everyday elevated</a></li>
+                                    <li><a href="#">Megawatt metallics</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="col-md-2 col-2">
+                                <ul class="list-unstyled">
+                                    <!-- <label class="bg-success">stock</label> -->
+                                    <li><a href="#"><img src="../asserts/images/logo-removebg-preview.png" class="img-fluid">
+                                    </a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+              <li>
+              <i class="fa-solid fa-magnifying-glass searchicon" style="color: #F0F0F0;"></i>
+              </li>
+            </ul>
+            <form class="d-flex cart" role="search">
+              <li>
+                <a href="#" class="nav-link"><i class="fa-solid fa-cart-shopping" style="color: #F0F0F0;"></i>
+                <i class="fa-regular fa-heart" style="color: #F0F0F0;"></i>
+                <i class="fa-regular fa-user" style="color: #F0F0F0;"></i></a>
+                </li>
+              <!-- <button class="btn btn searchbuttton" type="submit">Search</button> -->
+            </form>
+          </div>
+        </div>
+      </nav>
+  </div>
+
+// UPDATE CSS
+.mega-menu-content {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    display: none;
+    border-left: 10px solid #4e54c8;
+    border-right: 10px solid #8f94fb;
+  }
+  
+  .mega-menu {
+    position: static;
+  }
+  
+  .mega-menu:hover .mega-menu-content{
+    display: block;
+  }
+  
+  .mega-menu-content ul li a {
+    font-size: 15px;
+    text-decoration: none;
+    margin: 0;
+    font-weight: 100;
+    font-family: sans-serif;
+    font-weight: normal !important;
+  }
+  
+  .mega-menu-content ul li:hover {
+    background-color: #a8c1ffcb;
+  }
